@@ -1,0 +1,172 @@
+//
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 60,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 4,
+    "margin-right": 4,
+    "modules-left": ["custom/rofi", "hyprland/workspaces", "cpu", "memory", "disk", "mpris" ],
+    "modules-center": ["clock"],
+    "modules-right": [
+      "tray",
+      "network",
+      "backlight",
+      "pulseaudio",
+      "battery",
+      "custom/color-picker",
+      "custom/screenshot",
+      "custom/wallpaper",
+      "custom/power"
+    ],
+    "custom/rofi": {
+      "format": "󰣇",
+      "on-click": "rofi -show drun",
+      "on-click-middle": "killall -SIGUSR2 waybar",
+      "tooltip-format": "{}",
+      "exec": "~/.config/waybar/scripts/cheatsheet.py",
+      "interval": "once"
+    },
+    "hyprland/workspaces": {
+      "all-outputs": true,
+      "format": "{name}",
+      "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+      "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+      "sort-by-number": true,
+      "active-only": false
+    },
+    "mpris": {
+      "format": "{player_icon} {artist} - {title}",
+      "format-paused": "{status_icon} {artist} - {title}",
+      "tooltip-format": "{player} ({status})\r{artist} - {title}\r\rLeft-Click:   Play / Pause\rMiddle-Click: Previous Track\rRight-Click:  Next Track",
+      "title-len": 20,
+      "player-icons": {
+        "default": "",
+        "mpv": "",
+        "spotify": "󰓇"
+      },
+      "status-icons": {
+        "paused": "▶",
+        "stopped": ""
+      }
+    },
+    "hyprland/window": {
+      "format": "{title}",
+      "separate-outputs": true,
+      "rewrite": {
+        "(.*) — Mozilla Firefox": "󰈹  $1",
+        "(.*) — Zen Browser": "󰈹  Zen - $1",
+        "(.*) - Google Chrome": "  $1",
+        "(.*) - Visual Studio Code": "󰨞  $1",
+        "(.*) - nvim": "  $1",
+        "(.*) - Obsidian(.*)": "󱓧  $1",
+        "(.*) - fish": "  $1",
+        "yazi: (.*)": "  $1",
+        "nwg-look": "  GTK Settings",
+        "Qt6 Configuration Tool": "  QT Settings",
+        "blueman-manager": "Bluetooth Settings"
+      }
+    },
+    "clock": {
+      "format": "  {:%a %e %b %H:%M}",
+      "tooltip-format": "<tt>{calendar}</tt>",
+      "calendar": {
+        "mode": "month",
+        "format": {
+          "months": "<span color='#cdd6f4'><b>{}</b></span>",
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
+          "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
+          "today": "<span color='#f38ba8'><b>{}</b></span>"
+        }
+      }
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "tooltip": true,
+      "interval": 2
+    },
+    "disk": {
+      "format": " {percentage_used}%",
+    "path": "/home",
+      "tooltip": true,
+      "interval": 2
+    },
+    "memory": {
+      "interval": 30,
+      "format": " {used}GiB",
+      "max-length": 13,
+      "tooltip": false
+    },
+    "network": {
+      "format": "{ifname}",
+      "format-wifi": "  {essid}",
+      "format-ethernet": "  {ifname}",
+      "format-disconnected": "Disconnected ⚠ ",
+      "tooltip-format": " {ifname} via {gwaddri}",
+      "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+      "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 50
+    },
+    "tray": {
+      "icon-size": 15,
+      "spacing": 10
+    },
+    "backlight": {
+      "format": "{icon} <b>{percent}%</b>",
+      "format-icons": ["󰃞", "󰃟", "󰃠"],
+      "tooltip": false
+    },
+    "pulseaudio": {
+      "format": "{icon} <b>{volume}%</b>",
+      "format-muted": " 󰝟 ",
+      "format-bluetooth": "{icon}  <b>{volume}%</b>",
+      "format-bluetooth-muted": "󰝟 ",
+      "format-icons": {
+        "headset": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "tooltip": true,
+      "on-click": "pavucontrol",
+      "ignored-sinks": ["JamesDSP Sink", "Easy Effects Sink", "HDA NVidia Digital Stereo (HDMI)"]
+    },
+    "battery": {
+      "format": "{icon} {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-icons": ["", "", "", "", ""],
+      "max-length": 25,
+      "tooltip": true,
+      "interval": 5,
+      "states": {
+        "good": 70,
+        //"warning": 30,
+        "critical": 15
+      }
+    },
+    "custom/color-picker": {
+      "format": "",
+      "on-click": "hyprpicker -an && notify-send 'Colour copied to clipboard'", // Show the colour in the notification with wl-paste.
+      "tooltip-format": "Color Picker"
+    },
+//    "custom/screenshot": {
+//      "format": "",
+//      "on-click": "~/.config/waybar/scripts/screenshot_full.sh",
+//      "on-click-right": "~/.config/waybar/scripts/screenshot_area.sh",
+//      "tooltip-format": "Left-click:  Full Screen Screenshot\nRight-click: Area Screenshot"
+//    },
+    "custom/wallpaper": {
+      "format": "󰸉",
+      "on-click": "waypaper",
+      "on-click-right": "waypaper --random",
+      "tooltip-format": "Left-click:  Open Waypaper\nRight-click: Random Wallpaper"
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "~/.config/rofi/powermenu/type-4/powermenu.sh"
+    }
+  }
+]
