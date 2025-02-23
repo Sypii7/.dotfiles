@@ -15,7 +15,8 @@ if ! sudo pacman -Q "yay"; then
 fi
 
 # Fonts
-sudo pacman -S nerd-fonts --noconfirm
+sudo pacman -S $(pacman -Ssq nerd-fonts)
+sudo pacman -S $(pacman -Ssq noto-fonts)
 
 # themes
 if [[ ! -d ~/.themes ]]; then
