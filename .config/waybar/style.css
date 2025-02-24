@@ -147,6 +147,27 @@
   font-size: 10pt;
 }
 
+#custom-HTB {
+  margin-right: 12pt;
+  background-color: #11111b; 
+  color:#BBFF34;
+  background: #1e1e2e;
+  border-radius: 12pt;
+  margin-left: 15pt;
+  padding: 0 8pt;
+}
+
+#custom-target {
+  margin-left: 12pt;
+  background-color: #11111b; 
+  color: red;
+  background: #1e1e2e;
+  border-radius: 12pt;
+  margin-left: 15pt;
+  padding: 0 8pt;
+}
+
+
 * {
   margin: 0;
   padding: 0;

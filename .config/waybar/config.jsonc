@@ -9,7 +9,7 @@
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": ["custom/rofi", "hyprland/workspaces", "cpu", "memory", "disk", "mpris" ],
-    "modules-center": ["clock"],
+    "modules-center": ["custom/HTB","clock","custom/target"],
     "modules-right": [
       "tray",
       "network",
@@ -83,6 +83,16 @@
         }
       }
     },
+    "custom/HTB": {
+      "format": "󰮄 {}",
+      "exec": "ip addr | grep 'tun0' | tail -n 1 | awk '{print $2}'",
+      "interval": 2
+    },
+    "custom/target": {
+      "format": "󱓇  {}",
+      "exec": "/home/sypii/.config/scripts/target.sh",
+      "interval": 2
+    },
     "cpu": {
       "format": " {usage}%",
       "tooltip": true,
@@ -101,9 +111,10 @@
       "tooltip": false
     },
     "network": {
+      "interface": "enp5s0",
       "format": "{ifname}",
       "format-wifi": "  {essid}",
-      "format-ethernet": "  {ifname}",
+      "format-ethernet": "  {ipaddr}",
       "format-disconnected": "Disconnected ⚠ ",
       "tooltip-format": " {ifname} via {gwaddri}",
       "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",

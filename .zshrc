@@ -8,21 +8,6 @@ fi
 # Created by newuser for 5.9
 source /home/sypii/powerlevel10k/powerlevel10k.zsh-theme
 
-# ZSH AutoSuggestions Plugin
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# ZSH Syntax Highlighting
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-# ZSH Sudo
-if [ -f /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh ]; then
-	source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-fi
-
 # ZSH history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -51,8 +36,10 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Custom Aliases
-# -----------------------------------------------
+####################
+## Custom Aliases ##
+####################
+
 # bat
 alias cat='bat'
 alias catn='bat --style=plain'
@@ -68,6 +55,19 @@ alias ls='lsd --group-dirs=first'
 # icat
 alias icat='kitten icat'
 
+######################
+## Custom functions ##
+######################
+
+function settarget(){
+    ip_address=$1
+    machine_name=$2
+    echo "$ip_address $machine_name" > /home/sypii/.config/bin/target
+}
+
+function cleartarget(){
+    echo '' > /home/sypii/.config/bin/target
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -80,9 +80,26 @@ export PATH=/opt/kitty/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site
 source <(fzf --zsh)
 
 # Highlighting style fix
-ZSH_HIGHLIGHT_STYLES[menu-select]='bg=#28344a,fg=#7aa2f7'
 zstyle ':completion:*:*:*:*:default' menu select=1
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select=2  
 zstyle ':completion:*:*:*:*:corrections' list-colors "=*=34"
 zstyle ':completion:*:*:*:*:selected' list-colors "=*=34;4"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# ZSH AutoSuggestions Plugin
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# ZSH Syntax Highlighting
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# ZSH Sudo
+if [ -f /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh ]; then
+	source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+fi
+
