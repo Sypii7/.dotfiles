@@ -1,5 +1,7 @@
 # Dotfiles for ARCH
 
+Remember to install and configure zsh and p10k manually first.
+
 install zsh
 ```bash
 sudo pacman -S zsh
