@@ -55,6 +55,12 @@ alias ls='lsd --group-dirs=first'
 # icat
 alias icat='kitten icat'
 
+####################
+## Custom binds   ##
+####################
+
+bindkey "^[[3~" delete-char
+
 ######################
 ## Custom functions ##
 ######################
