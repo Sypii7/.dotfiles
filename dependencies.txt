@@ -56,3 +56,4 @@ cat
 sddm
 zsh
 fzf
+imagemagick
