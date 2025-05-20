@@ -1,9 +1,12 @@
 git
+zig
+meson
+ninja
+pam
 curl
 wget
 networkmanager
 sed
-fastfetch
 gtkmm3
 jsoncpp
 libsigc++
@@ -21,6 +24,8 @@ libmpdclient
 libsndio
 libevdev
 xkbregistry
+GTK4
+gtk4-layer-shell
 upower
 wayland
 wayland-protocols
@@ -32,6 +37,11 @@ libglvnd-core
 libjpeg-turbo
 libwebp
 libjxl
+python-importlib_metadata
+python-imageio
+python-imageio-ffmpeg
+python-screeninfo
+python-platformdirs
 hyprlang
 hyprutils
 hyprwayland-scanner
@@ -40,11 +50,7 @@ hyprlock
 hyprpaper
 hyprpicker
 hypridle
-python-importlib_metadata
-python-imageio
-python-imageio-ffmpeg
-python-screeninfo
-python-platformdirs
+fastfetch
 nautilus
 btop
 firefox
@@ -52,7 +58,7 @@ kitty
 neovim
 vlc
 bat
-cat
-sddm
 zsh
 fzf
+ly
+dysk

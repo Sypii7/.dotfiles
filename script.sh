@@ -78,10 +78,10 @@ done
 
 
 # simple sddm theme
-if [ ! -d "/usr/share/sddm/themes" ]; then
-  sudo mkdir -p "/usr/share/sddm/themes"
-  sudo cp -r "/home/sypii/.dotfiles/simple-sddm" "/usr/share/sddm/themes/"
-  echo "simple-sddm theme installed."
-fi
+#if [ ! -d "/usr/share/sddm/themes" ]; then
+#  sudo mkdir -p "/usr/share/sddm/themes"
+#  sudo cp -r "/home/sypii/.dotfiles/simple-sddm" "/usr/share/sddm/themes/"
+#  echo "simple-sddm theme installed."
+#fi
 
 

@@ -40,6 +40,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 ## Custom Aliases ##
 ####################
 
+# ping 
+alias mikubeam='ping'
+
 # bat
 alias cat='bat'
 alias catn='bat --style=plain'
