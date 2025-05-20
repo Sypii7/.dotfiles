@@ -62,3 +62,4 @@ zsh
 fzf
 ly
 dysk
+imagemagick
