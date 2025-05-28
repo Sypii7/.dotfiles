@@ -63,3 +63,4 @@ fzf
 ly
 dysk
 imagemagick
+colord
