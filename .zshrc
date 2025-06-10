@@ -95,7 +95,6 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*:*:*:*:corrections' list-colors "=*=34"
 zstyle ':completion:*:*:*:*:selected' list-colors "=*=34;4"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # ZSH AutoSuggestions Plugin
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
