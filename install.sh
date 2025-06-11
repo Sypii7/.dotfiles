@@ -22,7 +22,7 @@ sudo pacman -S $(pacman -Ssq noto-fonts)
 if [[ ! -d ~/.themes ]]; then
   sudo mkdir -p "~/.themes"
 fi
-sudo cp -r "~/.dotfiles/.themes"/* "~/.themes/"
+sudo cp -r "~/.dotfiles/.themes/*" "~/.themes/"
 
 
 # Zsh history file
