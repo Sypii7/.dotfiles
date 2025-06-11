@@ -6,7 +6,7 @@ install zsh
 ```bash
 sudo pacman -S zsh
 ```
-Install Oh My Zsh
+Install [Oh My Zsh](https://ohmyz.sh/)
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
