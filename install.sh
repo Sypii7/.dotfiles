@@ -22,7 +22,7 @@ sudo pacman -S $(pacman -Ssq noto-fonts)
 if [[ ! -d ~/.themes ]]; then
   sudo mkdir -p "~/.themes"
 fi
-sudo cp -r "~/.dotfiles/.themes/*" "~/.themes/"
+sudo cp -r ~/.dotfiles/.themes/* "~/.themes/"
 
 
 # Zsh history file
@@ -69,9 +69,9 @@ plugins=(
 )
 
 for plugin in "${plugins[@]}"; do 
- if [[ ! -d "$dir/plugins/$plugin" ]]; then
-   sudo mkdir -p "$dir/plugins/$plugin"
-   sudo cp -r "~/.dotfiles/zsh_plugins/$plugin"/* "$dir/plugins/$plugin/"
+ if [[ ! -d "$dir/$plugin" ]]; then
+   sudo mkdir -p "$dir/$plugin"
+   sudo cp -r "$HOME/.dotfiles/zsh_plugins/$plugin" "$dir/"
    echo "$plugin installed"
  fi
 done
