@@ -25,7 +25,6 @@ p10k configure
 
 Clone this repo
 ```bash
-cd
 git clone https://github.com/Sypii7/.dotfiles
 cd .dotfiles
 chmod +x install.sh
