@@ -6,10 +6,15 @@ install zsh
 ```bash
 sudo pacman -S zsh
 ```
+Install Oh My Zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
+Open `~/.zshrc`and change `ZSH_THEME` to `"powerlevel10k/powerlevel10k`
 restart zsh with
 ```bash
 exec zsh
