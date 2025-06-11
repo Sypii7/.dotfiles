@@ -42,7 +42,8 @@ python-imageio
 python-imageio-ffmpeg
 python-screeninfo
 python-platformdirs
-lsd 
+lsd
+bat
 hyprlang
 hyprutils
 hyprwayland-scanner
@@ -58,7 +59,6 @@ firefox
 kitty
 neovim
 vlc
-bat
 zsh
 fzf
 ly

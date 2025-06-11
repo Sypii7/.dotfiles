@@ -77,7 +77,7 @@ for plugin in "${plugins[@]}"; do
 done
 
 
-# simple sddm theme
+# simple sddm theme, now i use Ly as greeter
 #if [ ! -d "/usr/share/sddm/themes" ]; then
 #  sudo mkdir -p "/usr/share/sddm/themes"
 #  sudo cp -r "/home/sypii/.dotfiles/simple-sddm" "/usr/share/sddm/themes/"
