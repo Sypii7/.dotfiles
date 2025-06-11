@@ -42,6 +42,7 @@ python-imageio
 python-imageio-ffmpeg
 python-screeninfo
 python-platformdirs
+lsd 
 hyprlang
 hyprutils
 hyprwayland-scanner
