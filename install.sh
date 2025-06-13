@@ -20,14 +20,14 @@ sudo pacman -S $(pacman -Ssq noto-fonts)
 
 # themes
 if [[ ! -d ~/.themes ]]; then
-  sudo mkdir -p $home/.themes
+  sudo mkdir -p $HOME/.themes
 fi
-sudo cp -r $home/.dotfiles/.themes/* $home/.themes/
+sudo cp -r $HOME/.dotfiles/.themes/* $HOME/.themes/
 
 
 # Zsh history file
 if [[ ! -f ~/.zsh_history ]]; then
-  touch $home/.zsh_history
+  touch $HOME/.zsh_history
 fi
 
 
@@ -35,7 +35,7 @@ fi
 list="dependencies.txt"
 
 if [ ! -f "$list" ];then
-  cd $home/.dotfiles
+  cd $HOME/.dotfiles
   list="dependencies.txt"
 fi
 
