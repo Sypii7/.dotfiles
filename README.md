@@ -2,9 +2,9 @@
 
 Remember to install and configure zsh and p10k manually first.
 
-install zsh
+install zsh and git
 ```bash
-sudo pacman -S zsh
+sudo pacman -S zsh git
 ```
 Install [Oh My Zsh](https://ohmyz.sh/)
 ```bash
@@ -31,3 +31,7 @@ cd .dotfiles
 chmod +x install.sh
 ./install.sh
 ```
+
+Copy `.zshrc `, `.p10k.zsh` to the personal directory and `powerlevel10k.zsh-theme` to ~/powerlevel10k
+
+Then Reboot (or just log off) the system
