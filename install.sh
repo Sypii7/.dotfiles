@@ -20,14 +20,14 @@ sudo pacman -S $(pacman -Ssq noto-fonts)
 
 # themes
 if [[ ! -d ~/.themes ]]; then
-  sudo mkdir -p "~/.themes"
+  sudo mkdir -p $home/.themes
 fi
-sudo cp -r ~/.dotfiles/.themes/* "~/.themes/"
+sudo cp -r $home/.dotfiles/.themes/* $home/.themes/
 
 
 # Zsh history file
 if [[ ! -f ~/.zsh_history ]]; then
-  touch /home/sypii/.zsh_history
+  touch $home/.zsh_history
 fi
 
 
@@ -35,8 +35,8 @@ fi
 list="dependencies.txt"
 
 if [ ! -f "$list" ];then
-  echo "File $list doesnt exist."
-  exit 1
+  cd $home/.dotfiles
+  list="dependencies.txt"
 fi
 
 while IFS= read -r pkg; do
