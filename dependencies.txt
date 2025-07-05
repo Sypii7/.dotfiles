@@ -1,4 +1,5 @@
 git
+make
 zig
 meson
 ninja
