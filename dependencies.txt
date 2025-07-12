@@ -60,6 +60,7 @@ firefox
 kitty
 neovim
 vlc
+vlc-plugins-all
 zsh
 fzf
 ly
