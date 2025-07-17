@@ -69,3 +69,4 @@ imagemagick
 colord
 xclip
 jq
+tldr
