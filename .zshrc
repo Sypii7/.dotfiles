@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export ZSH="$HOME/.oh-my-zsh"
+
 # Created by newuser for 5.9
 source /home/sypii/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -63,6 +65,8 @@ alias icat='kitten icat'
 ####################
 
 bindkey "^[[3~" delete-char
+bindkey '^[[5~' history-beginning-search-backward
+bindkey '^[[6~' history-beginning-search-forward
 
 ######################
 ## Custom functions ##
@@ -94,7 +98,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select=2  
 zstyle ':completion:*:*:*:*:corrections' list-colors "=*=34"
 zstyle ':completion:*:*:*:*:selected' list-colors "=*=34;4"
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # ZSH AutoSuggestions Plugin
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
