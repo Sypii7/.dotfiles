@@ -70,3 +70,5 @@ colord
 xclip
 jq
 tldr
+libnfnetlink
+libnetfilter_queue
