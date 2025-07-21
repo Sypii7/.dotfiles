@@ -72,3 +72,6 @@ jq
 tldr
 libnfnetlink
 libnetfilter_queue
+base-devel
+openssl
+zlib
