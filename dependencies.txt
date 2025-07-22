@@ -75,3 +75,4 @@ libnetfilter_queue
 base-devel
 openssl
 zlib
+lftp
