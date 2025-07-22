@@ -117,3 +117,8 @@ fi
 
 # Created by `pipx` on 2025-05-21 21:28:27
 export PATH="$PATH:/home/sypii/.local/bin"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
