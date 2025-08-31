@@ -77,3 +77,4 @@ openssl
 zlib
 lftp
 python-html2text
+steghide
