@@ -78,3 +78,6 @@ zlib
 lftp
 python-html2text
 steghide
+ruby
+ruby-resolv-replace
+ruby-getoptlong
