@@ -83,3 +83,4 @@ ruby-resolv-replace
 ruby-getoptlong
 openvpn
 pavucontrol
+locate
