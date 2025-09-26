@@ -2,6 +2,14 @@
 
 Remember to install and configure zsh and p10k manually first.
 
+BlackArch repo
+```bash
+sudo pacman -Syu
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+```
+
 install zsh and git
 ```bash
 sudo pacman -S zsh git
