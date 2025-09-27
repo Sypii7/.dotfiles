@@ -84,6 +84,14 @@ ruby-getoptlong
 openvpn
 pavucontrol
 locate
+netcat
+alsa-utils
+jack2
+qjackctl
+realtime-privileges
+qemu-full
+libvirt
+virt-manager
 burpsuite
 exploitdb
 hydra
@@ -100,4 +108,3 @@ sublist3r
 rlwrap
 dirb
 dirsearch
-netcat
