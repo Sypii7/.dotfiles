@@ -92,6 +92,8 @@ realtime-privileges
 qemu-full
 libvirt
 virt-manager
+waybar
+pyenv
 burpsuite
 exploitdb
 hydra
