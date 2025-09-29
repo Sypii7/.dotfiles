@@ -95,6 +95,7 @@ virt-manager
 waybar
 pyenv
 brightnessctl
+rofi
 burpsuite
 exploitdb
 hydra
