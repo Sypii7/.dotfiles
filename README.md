@@ -43,3 +43,6 @@ chmod +x install.sh
 Copy `.zshrc`, `.p10k.zsh` to the personal directory and `powerlevel10k.zsh-theme` to ~/powerlevel10k
 
 Then Reboot (or just log off) the system
+```bash
+hyprctl dispatch exit
+```
