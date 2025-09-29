@@ -94,6 +94,7 @@ libvirt
 virt-manager
 waybar
 pyenv
+brightnessctl
 burpsuite
 exploitdb
 hydra
