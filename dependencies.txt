@@ -92,6 +92,12 @@ realtime-privileges
 qemu-full
 libvirt
 virt-manager
+virt-viewer
+dnsmasq
+vde2
+bridge-utils
+openbsd-netcat
+libguestfs
 waybar
 pyenv
 brightnessctl
