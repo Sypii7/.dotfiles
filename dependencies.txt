@@ -118,3 +118,4 @@ sublist3r
 rlwrap
 dirb
 dirsearch
+seclists
