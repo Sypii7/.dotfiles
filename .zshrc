@@ -60,6 +60,9 @@ alias ls='lsd --group-dirs=first'
 # icat
 alias icat='kitten icat'
 
+# grep colored output
+alias grep='grep --color=auto'
+
 ####################
 ## Custom binds   ##
 ####################
