@@ -76,6 +76,7 @@ zlib
 lftp
 python-html2text
 steghide
+stegseek
 ruby
 ruby-resolv-replace
 ruby-getoptlong
@@ -114,7 +115,7 @@ sublist3r
 rlwrap
 dirb
 dirsearch
-seclists
+blackarch-wordlist
 arp-scan
 crackmapexec
 enum4linux
@@ -176,3 +177,4 @@ masscan
 wfuzz
 docker
 docker-compose
+arpspoof
