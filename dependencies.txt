@@ -115,7 +115,7 @@ rlwrap
 dirb
 dirsearch
 seclists
-arpscan
+arp-scan
 crackmapexec
 enum4linux
 hashcat
